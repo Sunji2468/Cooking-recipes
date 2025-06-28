@@ -1,3 +1,3 @@
 # Cooking-recipes
 Cooking-Recipes is a user-friendly website designed for chefs of all skill levels. Whether you're in need of a quick dinner, healthy meals, vegetarian options, vegan recipes, or desserts, this website makes it easy to find and organize your favorite dishes.
-
+Building this recipe website was fun, but was also a little difficult, so I have used AI to help me with some of the parts that I don't understand and resolve the debugging issues. I encountered issues such as the recipe cards are not displaying, so AI identified the issues and help me correct the code. It also helped me create the search algorithm and the star rating system in JavaScript.
