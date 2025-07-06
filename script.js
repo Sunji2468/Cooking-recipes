@@ -1,5 +1,63 @@
 
-export 
+export const recipes = {
+    'roasted-tomato-sauce-pasta': {
+        id: 'roasted-tomato-sauce-pasta',
+        title: 'Roasted tomato sauce pasta',
+        category: 'Main Dish',
+        time: '30 mins',
+        rating: 4,
+        image: 'https://cdn77-s3.lazycatkitchen.com/wp-content/uploads/2021/10/roasted-tomato-sauce-portion-800x1200.jpg',
+        ingredients: [
+            '1 kg / 34 oz small tomatoes',
+            '8 cloves of garlic',
+            '45 ml / 3 tbsp olive oil',
+            '1½ tsp dried oregano',
+            'salt and pepper, to taste',
+            'pinch of chilli (optional)',
+            'pinch of sugar (optional)',
+            'a sprig of basil (optional)',
+            '300 g / 10½ oz favourite pasta'
+        ],
+        instructions: [
+            'Heat up the oven to 220° C',
+            'Cut the tomatoes and place in a large baking dish with unpeeled, crushed garlic',
+            'Drizzle with olive oil, season with oregano, salt, pepper, and a pinch of sugar if needed. Add fresh basil if available.',
+            'Bake for 25-30 minutes',
+            'Cook your pasta just short of al dente',
+            'Once tomatoes are soft, juicy and lightly charred in places, place the tomatoes and their juices into a blender',
+            'Transfer to a pan to heat it up gently, adjust the seasoning if needed and toss cooked pasta in the sauce.'
+        ]
+    },
+
+    'chicken-burger': {
+        id: 'Chicken burger',
+        title: 'Chicken burger',
+        category: 'Main Dish',
+        time: '90 mins',
+        rating: 5,
+        image: 'https://www.recipetineats.com/tachyon/2023/09/Crispy-fried-chicken-burgers_5.jpg?resize=900%2C1125&zoom=1',
+        ingredients: [
+            'Chicken breast',
+            'Buttermilk',
+            'Salt',
+            'Egg',
+            'Herbs and spices',
+            'Cornflour/cornstarch and flour',
+            'Soft buns',
+            'Gherkins/pickles',
+            'Lettuce',
+            'Garlic mayonnaise'
+        ],
+        instructions: [
+            'Pound the chicken to 1cm / 0.4″ even thickness.',
+            'Mix the buttermilk, salt and egg. Then add the chicken and toss to coat. Marinate for at least 3 hours, or up to 24 hours.',
+            'Mix together the flour, cornflour/cornstarch and all the spices.',
+            'Coat the chicken in the flour mixture just prior to frying.',
+            'Fry in oil for 4 minutes or until golden and crunchy, then drain on paper towels.',
+        ]
+    }
+};
+
 function scrollCarousel(offset) {
     document.getElementById('carousel').scrollBy({
         left: offset,
@@ -62,64 +120,6 @@ document.addEventListener('DOMContentLoaded', function() {
         performSearch();
     }
 
-    const recipes = {
-        'roasted-tomato-sauce-pasta': {
-            id: 'roasted-tomato-sauce-pasta',
-            title: 'Roasted tomato sauce pasta',
-            category: 'Main Dish',
-            time: '30 mins',
-            rating: 4,
-            image: 'https://cdn77-s3.lazycatkitchen.com/wp-content/uploads/2021/10/roasted-tomato-sauce-portion-800x1200.jpg',
-            ingredients: [
-                '1 kg / 34 oz small tomatoes',
-                '8 cloves of garlic',
-                '45 ml / 3 tbsp olive oil',
-                '1½ tsp dried oregano',
-                'salt and pepper, to taste',
-                'pinch of chilli (optional)',
-                'pinch of sugar (optional)',
-                'a sprig of basil (optional)',
-                '300 g / 10½ oz favourite pasta'
-            ],
-            instructions: [
-                'Heat up the oven to 220° C',
-                'Cut the tomatoes and place in a large baking dish with unpeeled, crushed garlic',
-                'Drizzle with olive oil, season with oregano, salt, pepper, and a pinch of sugar if needed. Add fresh basil if available.',
-                'Bake for 25-30 minutes',
-                'Cook your pasta just short of al dente',
-                'Once tomatoes are soft, juicy and lightly charred in places, place the tomatoes and their juices into a blender',
-                'Transfer to a pan to heat it up gently, adjust the seasoning if needed and toss cooked pasta in the sauce.'
-            ]
-        },
-
-        'Chicken burger': {
-            id: 'Chicken burger',
-            title: 'Chicken burger',
-            category: 'Main Dish',
-            time: '90 mins',
-            rating: 5,
-            image: 'https://www.recipetineats.com/tachyon/2023/09/Crispy-fried-chicken-burgers_5.jpg?resize=900%2C1125&zoom=1',
-            ingredients: [
-                'Chicken breast',
-                'Buttermilk',
-                'Salt',
-                'Egg',
-                'Herbs and spices',
-                'Cornflour/cornstarch and flour',
-                'Soft buns',
-                'Gherkins/pickles',
-                'Lettuce',
-                'Garlic mayonnaise'
-            ],
-            instructions: [
-                'Pound the chicken to 1cm / 0.4″ even thickness.',
-                'Mix the buttermilk, salt and egg. Then add the chicken and toss to coat. Marinate for at least 3 hours, or up to 24 hours.',
-                'Mix together the flour, cornflour/cornstarch and all the spices.',
-                'Coat the chicken in the flour mixture just prior to frying.',
-                'Fry in oil for 4 minutes or until golden and crunchy, then drain on paper towels.',
-            ]
-        }
-    };
 
     const modal = document.getElementById('recipe-modal');
     const modalTitle = document.getElementById('modal-title');
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalImage = document.getElementById('modal-image');
     const modalIngredients = document.getElementById('modal-ingredients');
     const modalInstructions = document.getElementById('modal-instructions');
-    const saveRecipeBtn = document.querySelector('.save-recipes-btn');
+    const saveRecipeBtn = document.querySelector('.save-recipe-btn');
 
     // click for the recipe cards
     document.querySelectorAll('.recipe-card').forEach(card => {
