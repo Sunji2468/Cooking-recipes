@@ -1,3 +1,5 @@
+
+export 
 function scrollCarousel(offset) {
     document.getElementById('carousel').scrollBy({
         left: offset,
@@ -6,6 +8,8 @@ function scrollCarousel(offset) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    console.log("saved")
+
     const searchInput = document.getElementById('recipe-search');
     const searchButton = document.getElementById('search-button');
     const recipeCards = document.querySelectorAll('.recipe-card');
@@ -125,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalImage = document.getElementById('modal-image');
     const modalIngredients = document.getElementById('modal-ingredients');
     const modalInstructions = document.getElementById('modal-instructions');
-    const saveRecipeBtn = document.querySelector('.save-recipe-btn');
+    const saveRecipeBtn = document.querySelector('.save-recipes-btn');
 
     // click for the recipe cards
     document.querySelectorAll('.recipe-card').forEach(card => {
@@ -173,6 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
+        console.log(saveRecipeBtn)
     }
 
     document.querySelector('.close-modal').addEventListener('click', closeModal);
@@ -199,8 +204,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function saveRecipe(recipeTitle) {
+        console.log(recipeTitle)
         let savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
         const recipeId = recipeTitle.toLowerCase().replace(/\s+/g, '-');
+        console.log(recipeId)
         if (!savedRecipes.includes(recipeId)) {
             savedRecipes.push(recipeId);
             localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
